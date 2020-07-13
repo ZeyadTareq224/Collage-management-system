@@ -1,0 +1,13 @@
+{% extends 'CoursesMS/base.html' %}
+{% block content %}
+<form class="form-control" method="POST" action="">
+	{% csrf_token %}
+
+<p>Are you sure you want to delete this task "{{task.title}}"?</p>
+<p>Note: this action CANNOT be reversed.</p>
+
+	<button class="btn btn-danger">Delete</button>
+	<a class="btn btn-secondary" href="{% url 'sysuser' %}">Cancel</a>
+
+</form>
+{% endblock content %}

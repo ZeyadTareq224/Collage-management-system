@@ -1,0 +1,11 @@
+{% extends 'CoursesMS/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form method="POST" action="{% url 'account_settings' %}"> 
+	{% csrf_token %}
+	{{form|crispy}}
+<center><button class="btn  btn-success">Submit</button></center>
+</form>
+
+{% endblock content %}

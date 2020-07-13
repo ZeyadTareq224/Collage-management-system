@@ -1,0 +1,8 @@
+{% load crispy_forms_tags %}
+<center>
+<form>
+	{{user_filter.form.username_filter|as_crispy_field}}
+	<button class="btn btn-outline-secondary btn-sm">Search</button>
+</form>
+<br>
+</center>

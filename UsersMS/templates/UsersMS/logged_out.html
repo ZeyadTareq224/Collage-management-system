@@ -1,0 +1,74 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>sign in|UsersMS </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/css/util.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'userassets/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+  <div class="limiter">
+
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+      <center>
+  <h3>you are logged out</h3>
+  </center>
+      <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+        <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+              <a href="{% url 'login' %}" class="login100-form-btn">
+                Login again?
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div id="dropDownSelect1"></div>
+  
+<!--===============================================================================================-->
+  <script src="{% static 'userassets/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'userassets/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'userassets/vendor/bootstrap/js/popper.js' %}"></script>
+  <script src="{% static 'userassets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'userassets/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'userassets/vendor/daterangepicker/moment.min.js' %}"></script>
+  <script src="{% static 'userassets/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'userassets/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'userassets/js/main.js' %}"></script>
+
+</body>
+</html>

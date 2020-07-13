@@ -1,0 +1,28 @@
+{% extends 'CoursesMS/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-title">User Todo List</div>
+									</div>
+									<div class="card-body">
+										<form class="form-group" action="" method="POST">
+											{% csrf_token %}
+											{{form|crispy}}
+											<center>
+											<div class="card-action">
+												<button class="btn btn-success">Submit</button>
+												<a class="btn btn-primary" href="{% url 'sysuser' %}">Cancel</a>
+											</div>
+										</center>
+										</form>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+
+{% endblock content %}

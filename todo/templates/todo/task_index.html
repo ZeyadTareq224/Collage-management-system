@@ -1,0 +1,49 @@
+<div class="col-md-12">
+    <div class="card card-tasks">
+      <center>
+        <div class="card-header ">
+          {% include 'todo/search_form.html' %}
+          <h4 class="card-title">Tasks</h4>
+          <p class="card-category">To Do List</p>
+        </div>
+      </center>  
+      <div class="card-body ">
+        <div class="table-full-width">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Task</th>
+                <th>Describtion</th>
+                <th>created at</th>
+                <th>updated at</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for task in tasks %}
+              <tr>
+                <td>{{task.id}}</td>
+                <td>{{task.title}}</td>
+                <td>{{task.describtion}}</td>
+                <th>{{task.created_at}}</th>
+                <th>{{task.updated_at}}</th>
+                <td class="td-actions text-right">
+                  <div class="form-button-action">
+                    <button type="button" data-toggle="tooltip" title="Edit Task" class="btn btn-link <btn-simple-primary">
+                      <a href="{% url 'update_task' task.id %}" class="la la-edit"></a>
+                    </button>
+                    <button type="button" data-toggle="tooltip" title="Remove" class="btn btn-link btn-simple-danger">
+                      <a href="{% url 'delete_task' task.id %}" class="la la-times"></a>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+    </div>
+  </div>

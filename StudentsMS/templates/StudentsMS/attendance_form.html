@@ -1,0 +1,17 @@
+{% extends 'CoursesMS/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form class="form-control" method=POST action="">
+	<center>Manage Attendace!</center>
+ 	<P>Welcome {{student.user.username}} here you can take your attendance.</P>
+ 	<p>just choose the course you want to register an attendance for</p>
+	{% csrf_token %}
+	{{att_form|crispy}}
+	<center>
+		<button class="btn btn-success">Submit</button>
+		<a class="btn btn-secondary" href="{% url 'studashboard' %}">Go back</a>
+	</center>
+</form>
+
+
+{% endblock content %}

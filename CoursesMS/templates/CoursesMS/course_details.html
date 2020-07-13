@@ -1,0 +1,44 @@
+{% extends 'CoursesMS/base.html' %}
+{% block content %}
+<h4 class="page-title">CoursesMS</h4>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">Courese_name Details</h4>
+			</div>
+			<div class="card-body">
+				<ul>
+					<li>Course Name</li><span><p>{{course.course_name}}</p></span>
+					<hr>
+					<li>Course Code</li><span><p>{{course.course_code}}</p></span>
+					<hr>
+					<li>Course Semster</li><span><p>{{course.course_semster}}</p></span>
+					<hr>
+					<li>Credit Hours</li><span><p>{{course.cridit_hours}}</p></span>
+					<hr>
+					<li>number of students</li><span><p>{{course_students.count}}</p></span>
+					<hr>
+					<li>number of teachers</li><span><p>some number</p></span>
+					<hr>
+					<li>attendance rate</li><span><p>some rate</p></span>
+
+				</ul>
+				<center>
+					{% if request.user.groups.get.name == 'student' %}
+					<div class="card-action">
+
+						<center><a href="{% url 'studashboard' %}" class="btn btn-secondary">Go back</a></center>
+					</div>
+					{% else %}
+					<div class="card-action">
+						<a class="btn btn-success" href="{% url 'courses_update' course.id %}">Update</a>
+						<a class="btn btn-danger" href="{% url 'courses_delete' course.id %}">Delete</a>
+					</div>
+					{% endif %}
+				</center>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

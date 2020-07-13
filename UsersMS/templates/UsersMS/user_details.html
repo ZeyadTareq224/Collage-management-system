@@ -1,0 +1,65 @@
+{% extends 'CoursesMS/base.html' %}
+{% block content %}
+<div class="form-control">
+	<div class="card">
+		<div class="card-header">
+			<center><h4 class="alert alert-secondary" style="font-family: sans-serif; color: black">
+			{{userd.username}}: Details
+			</h4>
+			</center>
+		</div>
+		<div class="card-body">
+			<h5>Username: {{userd.username}}</h5>
+
+		</div>
+		<hr>
+		<div class="card-body">
+			<h5>Email: 	{{userd.email}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Group: {{userd.groups.get}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Permissions: {{userd.user_permissions.get}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Date Joined: {{userd.date_joined}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Last Login: {{userd.last_login}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Is Active: {{userd.is_active}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Is Staff: {{userd.is_staff}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Is Admin: {{userd.is_superuser}}</h5>
+
+		</div>
+
+	</div>
+</div>
+{% endblock content %}

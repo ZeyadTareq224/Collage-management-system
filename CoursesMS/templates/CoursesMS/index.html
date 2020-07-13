@@ -1,0 +1,133 @@
+{% extends 'CoursesMS/base.html' %}
+{% block content %}
+<center><h5 class="alert alert-secondary" style="color: gray; font-family: initial;">CoursesMS Dashboard</h5></center>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card card-stats card-warning">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center">
+              <i class="la la-users"></i>
+            </div>
+          </div>
+          <div class="col-7 d-flex align-items-center">
+            <div class="numbers">
+              <p class="card-category">Visitors</p>
+              <h4 class="card-title">1,294</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-stats card-success">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center">
+              <i class="la la-bar-chart"></i>
+            </div>
+          </div>
+          <div class="col-7 d-flex align-items-center">
+            <div class="numbers">
+              <p class="card-category">Sales</p>
+              <h4 class="card-title">$ 1,345</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-stats card-danger">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center">
+              <i class="la la-newspaper-o"></i>
+            </div>
+          </div>
+          <div class="col-7 d-flex align-items-center">
+            <div class="numbers">
+              <p class="card-category">Subscribers</p>
+              <h4 class="card-title">1303</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-stats card-primary">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center">
+              <i class="la la-check-circle"></i>
+            </div>
+          </div>
+          <div class="col-7 d-flex align-items-center">
+            <div class="numbers">
+              <p class="card-category">Courses Counter</p>
+              <h4 class="card-title">{{number_of_courses}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="card">
+      <center>
+        <div class="card-header ">
+                {% include 'CoursesMS/search_form.html' %}
+
+          <h4 class="card-title">Courses Table</h4>
+          <p class="card-category">Note: this tabel represents all of the system courses</p>
+        </div>
+      </center>  
+      <div class="card-body">
+        <table class="table table-head-bg-success table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Course Name</th>
+              <th>Course Code</th>
+              <th>Semster</th>
+              <th>Created at</th>
+              <th>Updated at</th>
+              <th>Details</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for course in courses %}
+            <tr>
+              <td>{{course.id}}</td>
+              <td>{{course.course_name}}</td>
+              <td>{{course.course_code}}</td>
+              <td>{{course.course_semster}}</td>
+              <td>{{course.date_created}}</td>
+              <td>{{course.date_updated}}</td>
+              <td><a class="btn btn-warning" href="{% url 'courses_details' course.id %}">View</a></td>
+              <td><a class="btn btn-success" href="{% url 'courses_update' course.id %}">Update</a></td>
+              <td><a class="btn btn-danger" href="{% url 'courses_delete' course.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'CoursesMS/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form class="form-control" method=POST action="">
+	{% csrf_token %}
+	{{form|crispy}}
+	<button class="btn btn-success">Submit</button>
+</form>
+
+
+{% endblock content %}

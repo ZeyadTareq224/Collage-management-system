@@ -1,0 +1,8 @@
+{% load crispy_forms_tags %}
+<center>
+<form>
+	{{task_filter.form.task_title_filter|as_crispy_field}}
+	<button class="btn btn-outline-secondary btn-sm">Search</button>
+</form>
+<br>
+</center>

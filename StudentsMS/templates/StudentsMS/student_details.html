@@ -1,0 +1,61 @@
+{% extends 'CoursesMS/base.html' %}
+{% block content %}
+<div class="form-control">
+	<div class="card">
+		<div class="card-header">
+			Students Details
+			<center><h4 class="alert alert-secondary" style="font-family: sans-serif; color: black">
+			{{student.user.username}}: Details
+			</h4>
+			</center>
+		</div>
+		<div class="card-body">
+			<h5>Username: {{student.user.username}}</h5>
+
+		</div>
+		<hr>
+		<div class="card-body">
+			<h5>Email: 	{{student.user.email}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Group: {{student.user.groups.get}}</h5>
+
+		</div>
+				<hr>
+
+		
+		<div class="card-body">
+			<h5>Date Joined: {{student.user.date_joined}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Last Login: {{student.user.last_login}}</h5>
+
+		</div>
+				<hr>
+
+		<div class="card-body">
+			<h5>Is Active: {{student.user.is_active}}</h5>
+
+		</div>
+				<hr>
+		<div class="card-body">
+			<h5>Registered Courses:
+				<ul>
+					{% for course in regcourses %}
+					<li>{{course.course_name}}</li><p><span>{{course.course_code}}</span></p>
+					{% endfor %}
+				</ul>
+			</h5>
+		</div>	
+
+		
+
+	</div>
+</div>
+{% endblock content %}

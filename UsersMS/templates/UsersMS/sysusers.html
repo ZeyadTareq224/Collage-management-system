@@ -1,0 +1,179 @@
+{% extends 'CoursesMS/base.html' %}
+{% block content %}
+<center><h5 class="alert alert-secondary" style="color: gray; font-family: initial;">UsersMS Dashboard</h5></center>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card card-stats card-warning">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center">
+              <i class="la la-users"></i>
+            </div>
+          </div>
+          <div class="col-7 d-flex align-items-center">
+            <div class="numbers">
+              <p class="card-category">Total Users</p>
+              <h4 class="card-title">{{users.count}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-stats card-success">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center">
+              <i class="la la-bar-chart"></i>
+            </div>
+          </div>
+          <div class="col-7 d-flex align-items-center">
+            <div class="numbers">
+              <p class="card-category">Total Trachers</p>
+              <h4 class="card-title"> 1,345</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-stats card-danger">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center">
+              <i class="la la-newspaper-o"></i>
+            </div>
+          </div>
+          <div class="col-7 d-flex align-items-center">
+            <div class="numbers">
+              <p class="card-category">Totla Students</p>
+              <h4 class="card-title">1303</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-stats card-primary">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5">
+            <div class="icon-big text-center">
+              <i class="la la-check-circle"></i>
+            </div>
+          </div>
+          <div class="col-7 d-flex align-items-center">
+            <div class="numbers">
+              <p class="card-category">Total Managers</p>
+              <h4 class="card-title">5645</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+
+  <div class="col-md-12">
+
+    <div class="card">
+
+      <center>
+        <div class="card-header ">
+          {% include 'UsersMS/search_form.html' %}
+
+
+          <h4 class="card-title">Users Tabel</h4>
+          <p class="card-category">Note: This table represents all system users</p>
+
+        </div>
+
+      </center>  
+      <div class="card-body">
+        <table class="table table-head-bg-success table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>View</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+
+              <td>{{user.id}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.groups.get}}</td>
+              <td><a class="btn btn-warning" href="{% url 'sysuser_details' user.id  %}">View</a></td>
+              <td><a class="btn btn-success" href="{% url 'sysuser_update' user.id %}">Update</a></td>
+              <td><a class="btn btn-danger" href="{% url 'sysuser_delete' user.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>	
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+
+    <div class="card">
+
+      <center>
+        <div class="card-header ">
+          {% include 'StudentsMS/search_form.html' %}
+
+
+          <h4 class="card-title">Students Tabel</h4>
+          <p class="card-category">Note: This table represents all system students</p>
+
+        </div>
+
+      </center>  
+      <div class="card-body">
+        <table class="table table-head-bg-success table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>View</th>
+              <th>Re Assign</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for student in students %}
+            <tr>
+
+              <td>{{student.id}}</td>
+              <td>{{student.user.username}}</td>
+              <td>{{student.user.email}}</td>
+              <td>{{student.user.groups.get}}</td>
+              <td><a class="btn btn-warning" href="{% url 'studetails' student.id %}">View</a></td>
+              <td><a class="btn btn-secondary" href="{% url 'studentreassign' student.id %}">Re-Assign</a></td>
+              <td><a class="btn btn-danger" href="{% url 'studentdelete' student.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>  
+      </div>
+    </div>
+  </div>
+  {% include 'todo/task_index.html' %}
+</div>
+{% endblock content %}

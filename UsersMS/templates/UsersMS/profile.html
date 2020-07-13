@@ -1,0 +1,32 @@
+{% extends 'CoursesMS/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="col-md-12">
+    <div class="card">
+      <center>
+        <div class="card-header ">
+          <h4 class="card-title">User Details</h4>
+        </div>
+      </center>  
+      <div class="card-body">
+        <center><img class="rounded-circle account-img" style="width: 200px" src="{{user.profile.image.url}}">
+          <form class="form-group" method="POST" action="{% url 'profile' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button class="btn btn-outline-primary">Submit</button>
+            
+          </form>
+        </center>
+      	<ul>
+          <hr>
+      		<h5>Username: {{user.username}}</h5>
+      		<h5>Email: {{user.email}}</h5>
+
+      	</ul>
+        
+        <h4></h4>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

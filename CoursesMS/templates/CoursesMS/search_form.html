@@ -1,0 +1,12 @@
+{% load crispy_forms_tags %}
+<center>
+<form class="form-control">
+			{{course_filter.form.course_code_filter|as_crispy_field}}
+			{{course_filter.form.course_name_filter|as_crispy_field}}
+			{{course_filter.form.course_semster|as_crispy_field}}
+	<br><br>
+	<button class="btn btn-outline-secondary btn-sm">Search</button>
+	<hr>
+</form>
+<br>
+</center>

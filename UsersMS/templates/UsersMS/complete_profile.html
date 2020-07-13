@@ -1,0 +1,11 @@
+{% extends 'CoursesMS/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h5>please complete your profile to continue!</h5>
+<form method="POST" action="{% url 'completeprofile' %}" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{form|crispy}}
+	<button class="btn btn-success">Submit</button>
+	
+</form>
+{% endblock content %}
