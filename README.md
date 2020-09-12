@@ -9,6 +9,8 @@ Couerse Management System: where managers can add new courses to the system and 
 Stuedents Management System: where students can view thier dashboards and search for courses in the system, students can also register courses for the semester
 and managers can delete students form the system or edit only some details related to them
 
+the system provide an integrated todo list to help managers and student organize thier work
+
 NOTE:THIS PROJECT IS STILL UNDER DEVELOPMENT
 
 
