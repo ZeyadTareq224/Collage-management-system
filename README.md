@@ -2,7 +2,7 @@
 
 this is a collage management system that consists of:
 
-users management system: where users can perform login and signup functions, assining new student to thier authorization group, manageing users profiles and performing CRUD on users 
+users management system: where users can perform login and signup functions, assining new student to thier authorization group, manageing users profiles and performing multiple user type authentication
 
 Couerse Management System: where managers can add new courses to the system and perform delete and update functions on them
 
@@ -11,7 +11,6 @@ and managers can delete students form the system or edit only some details relat
 
 the system provide an integrated todo list to help managers and student organize thier work
 
-NOTE:THIS PROJECT IS STILL UNDER DEVELOPMENT
 
 
 HOW TO START:
